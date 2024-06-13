@@ -2,32 +2,202 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --special: #0A3161;
+    --bgc: #B31942;
+    --textDark: black;
+    --textLight: white;
+  }
+
+  :root {
+    --background: 344 0% 95%;
+    --foreground: 344 0% 0%;
+    --card: 344 0% 90%;
+    --card-foreground: 344 0% 10%;
+    --popover: 344 0% 95%;
+    --popover-foreground: 344 95% 0%;
+    --primary: 344 75.5% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 344 10% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 306 10% 85%;
+    --muted-foreground: 344 0% 35%;
+    --accent: 306 10% 80%;
+    --accent-foreground: 344 0% 10%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 344 0% 90%;
+    --border: 344 20% 50%;
+    --input: 344 20% 18%;
+    --ring: 344 75.5% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 344 10% 5%;
+    --foreground: 344 0% 90%;
+    --card: 344 0% 0%;
+    --card-foreground: 344 0% 90%;
+    --popover: 344 10% 5%;
+    --popover-foreground: 344 0% 90%;
+    --primary: 344 75.5% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 344 10% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 306 10% 15%;
+    --muted-foreground: 344 0% 60%;
+    --accent: 306 10% 15%;
+    --accent-foreground: 344 0% 90%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 344 0% 90%;
+    --border: 344 20% 18%;
+    --input: 344 20% 18%;
+    --ring: 344 75.5% 40%;
+    --radius: 0.5rem;
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  /* overflow-x: hidden; */
+}
+
+/* Code for Firefox */
+::-moz-selection {
+  color: var(--success);
+  background: #ff0000;
+}
+
+::selection {
+  color: var(--success);
+  background: #ff0000;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+h1 {
+  font-size: 3.25rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.074rem;
+}
+
+h4 {
+  font-size: 1.728rem;
+}
+
+h5 {
+  font-size: 1.44rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 720px) {
+  h1 {
+    font-size: calc(3.25rem * 0.75);
+  }
+
+  h2 {
+    font-size: calc(2.5rem * 0.75);
+  }
+
+  h3 {
+    font-size: calc(2.074rem * 0.75);
+  }
+
+  h4 {
+    font-size: calc(1.728rem * 0.75);
+  }
+
+  h5 {
+    font-size: calc(1.44rem * 0.75);
+  }
+
+  h6 {
+    font-size: calc(1.2rem * 0.75);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--textDark);
+  line-height: 1.25;
+  font-weight: 700;
+  text-wrap: pretty;
+}
+
+p,
+div,
+span {
+  font-size: 1rem;
+}
+
+p.small {
+  font-size: 0.833rem;
+}
+
+div,
+span,
+p {
+  color: var(--textLight);
+  line-height: 1.6;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.bg_awesome {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg,
+      var(--primary),
+      var(--secondary),
+      var(--primary),
+      var(--secondary));
+  background-size: 400% 400%;
+  animation: bg__gradient 20s ease infinite;
+  height: 100vh;
+}
+
+@keyframes bg__gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
