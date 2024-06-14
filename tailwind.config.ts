@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,6 +19,14 @@ const config = {
     },
     extend: {
       colors: {
+        special: {
+          DEFAULT: "var(--special)",
+          foreground: "var(--special-foreground)",
+        },
+        bgc: "var(--bgc)",
+        textDark: "var(--textDark)",
+        textLight: "var(--textLight)",
+        danger: "var(--danger)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
