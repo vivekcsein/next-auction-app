@@ -6,7 +6,8 @@
 
   :root {
     --special: #0A3161;
-    --bgc: #B31942;
+    /* --bgc: #B31942; */
+    --bgc: rgb(224, 224, 224);
     --textDark: black;
     --textLight: white;
     --danger: red;
@@ -77,6 +78,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-size: 20px;
+  color: var(--textDark);
   /* overflow-x: hidden; */
 }
 
@@ -162,19 +164,24 @@ h6 {
 p,
 div {
   font-size: 1rem;
+  color: var(--textDark);
 }
 
 p.small {
   font-size: 0.833rem;
+  color: var(--textDark);
 }
 
 div,
 span,
 p {
-  color: var(--textLight);
   line-height: 1.6;
   font-weight: 500;
   text-wrap: pretty;
+}
+
+.text-special {
+  color: var(--special);
 }
 
 .bg_awesome {
@@ -202,6 +209,10 @@ p {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.boxshadow {
+  box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
 }
 
 .animate {

@@ -1,11 +1,14 @@
 
-export const signinAPI = async () => {
+export const signinAPI = async (email: string, password: string) => {
     const res = await fetch("/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        credentials: "include",
+        body: JSON.stringify({
+            email: email,
+            password: password,
+        }),
     });
     if (!res.ok) throw new Error("api is not working");
     const data = await res.json();

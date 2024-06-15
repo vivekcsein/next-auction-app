@@ -21,13 +21,7 @@ const Navbar_user = ({ name, logout }: Navbar_userPrps) => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            variant="secondary"
-            size="icon"
-            className=" h-fit w-fit px-2 py-1 bg-special hover:bg-special-foreground"
-          >
-            Hello {name ? name : "user"}
-          </Button>
+          <Button variant="outline"> Hello {name ? name : "user"}</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="bg-special">
           <Navbar_user_dropdown onclick={logout} label="Settings" />

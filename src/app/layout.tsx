@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} dark`}>
+      <body className={`${roboto.className} bg-gray-100`}>
         <AuthProvider>
           <div className="root-container">
             <div className="root-wrapper relative ">
