@@ -21,7 +21,7 @@ export default function RootLayout({
         <AuthProvider>
           <div className="root-container">
             <div className="root-wrapper relative ">
-              <div className="sticky top-0">
+              <div className="sticky top-0 z-50">
                 <Header />
               </div>
               {children}

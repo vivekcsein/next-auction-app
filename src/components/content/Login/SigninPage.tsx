@@ -10,7 +10,6 @@ import { Button } from "../../ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,15 +22,6 @@ import { InputPassword } from "./InputPassword";
 import Navbar_icon from "../Navbar/Navbar_icon";
 import { signinAPI } from "@/lib/api/authAPI";
 
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from "@/components/ui/dialog";
 import SignupPage from "./SignupPage";
 
 const FormSchema = z.object({

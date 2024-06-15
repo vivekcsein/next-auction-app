@@ -21,7 +21,7 @@ const Header = () => {
   const logoutFun = () => {};
 
   return (
-    <header className="w-full h-12 flex justify-between lg:justify-evenly items-center shrink-0 px-4 md:px-6 py-8 bg-white   ">
+    <header className="w-full h-12 flex justify-between lg:justify-evenly items-center shrink-0 px-4 md:px-6 py-8 bg-white z-[9999]   ">
       {/* mobile navigation  */}
       <Sheet>
         <Hamburger />
@@ -37,7 +37,7 @@ const Header = () => {
           <DialogTrigger asChild>
             <Button variant="outline">Login</Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[600px]">
+          <DialogContent className="  sm:max-w-[600px] rounded-lg mx-auto">
             <SigninPage />
           </DialogContent>
         </Dialog>

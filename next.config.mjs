@@ -8,6 +8,10 @@ const nextConfig = {
             },
             {
                 protocol: "https",
+                hostname: "pickbazarlaravel.s3.ap-southeast-1.amazonaws.com",
+            },
+            {
+                protocol: "https",
                 hostname: "raw.githubusercontent.com",
             },
             {

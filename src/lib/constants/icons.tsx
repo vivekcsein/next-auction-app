@@ -8,26 +8,28 @@ import {
 } from "lucide-react";
 import React from "react";
 
+const strokesize = 0.8  ;
+const svgsize = 60;
 export const icon_laptop = () => {
-  return <Laptop size={100} strokeWidth={1} />;
+  return <Laptop size={svgsize} strokeWidth={strokesize} />;
 };
 
 export const icon_smartphone = () => {
-  return <Smartphone size={100} strokeWidth={1} />;
+  return <Smartphone size={svgsize} strokeWidth={strokesize} />;
 };
 
 export const icon_tablet = () => {
-  return <Tablet size={100} strokeWidth={1} />;
+  return <Tablet size={svgsize} strokeWidth={strokesize} />;
 };
 
 export const icon_BatteryCharging = () => {
-  return <BatteryCharging size={100} strokeWidth={1} />;
+  return <BatteryCharging size={svgsize} strokeWidth={strokesize} />;
 };
 
 export const icon_headset = () => {
-  return <Headset size={100} strokeWidth={1} />;
+  return <Headset size={svgsize} strokeWidth={strokesize} />;
 };
 
 export const icon_gamepad = () => {
-  return <Gamepad2 size={100} strokeWidth={1} />;
+  return <Gamepad2 size={svgsize} strokeWidth={strokesize} />;
 };

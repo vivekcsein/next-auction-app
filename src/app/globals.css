@@ -6,10 +6,11 @@
 
   :root {
     --special: #0A3161;
-    /* --bgc: #B31942; */
+    --redspecial: #B31942;
     --bgc: rgb(224, 224, 224);
     --textDark: black;
     --textLight: white;
+    --textdull: #727171;
     --danger: red;
 
     --special-foreground: #0a3161c1;
@@ -212,7 +213,7 @@ p {
 }
 
 .boxshadow {
-  box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
+  box-shadow: 0 2px 2px hsl(0deg 0% 0% / 0.3);
 }
 
 .animate {
