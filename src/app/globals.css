@@ -85,13 +85,13 @@ body {
 
 /* Code for Firefox */
 ::-moz-selection {
-  color: var(--success);
-  background: #ff0000;
+  color: white;
+  background: blue;
 }
 
 ::selection {
-  color: var(--success);
-  background: #ff0000;
+  color: white;
+  background: blue;
 }
 
 @layer utilities {

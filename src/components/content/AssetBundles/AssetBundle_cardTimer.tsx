@@ -12,8 +12,8 @@ interface TimeLeft {
   seconds?: number;
 }
 
-const calculateTimeLeft = (endTime: Date) => {
-  const difference = new Date(endTime).getTime() - new Date().getTime();
+const calculateTimeLeft = (endtime: Date) => {
+  const difference = new Date(endtime).getTime() - new Date().getTime();
   let timeLeft: TimeLeft = {};
 
   if (difference > 0) {
@@ -29,9 +29,10 @@ const calculateTimeLeft = (endTime: Date) => {
 
 const AssetBundle_cardTimer = ({ endTime }: TimerProps) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({});
+  const timestamp = calculateTimeLeft(endTime);
 
   useEffect(() => {
-    setTimeLeft(calculateTimeLeft(endTime));
+    setTimeLeft(timestamp);
   }, [endTime]);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const AssetBundle_cardTimer = ({ endTime }: TimerProps) => {
   return (
     <div className="flex justify-start gap-2 items-center   w-full">
       <p className="text-textdull text-sm">Ends In :</p>
-      {timeLeft.days !== undefined ? (
+      {timeLeft.seconds !== 0 ? (
         <p className="text-redspecial">
           {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
           {timeLeft.seconds}s
