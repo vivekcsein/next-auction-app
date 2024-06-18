@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import * as React from "react";
 
 import { GalleryItem } from "../../../lib/constants/dummyProductData";
@@ -18,8 +18,6 @@ type Product_couroselProps = {
   imagesList: Array<GalleryItem>;
 };
 export function Product_courosel({ imagesList }: Product_couroselProps) {
-  const [currentSideImages, setCurrentSideImages] = React.useState(0);
-
   return (
     <Carousel className="w-full max-w-md">
       <CarouselContent className="  ">
@@ -39,15 +37,12 @@ export function Product_courosel({ imagesList }: Product_couroselProps) {
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
-      <div className="w-full flex absolute top-[80%]   ">
+      <div className="w-full   absolute top-[80%]  grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-3 md:grid-cols-[repeat(auto-fill,minmax(100px,1fr))]  ">
         {imagesList.map((image, index) => {
           return (
             <CarouselList
-              className="bg-transparent w-[200px] h-auto cursor-pointer active hover:border-2 hover:border-special "
-              onClick={() => {
-                setCurrentSideImages(index);
-              }}
-              Num={currentSideImages}
+              className="couroselListItem bg-transparent cursor-pointer border-2 border-opacity-10 border-textdull-foreground hover:border-2 hover:border-special "
+              Num={index}
             >
               <Image
                 alt={`${image.id}`}
@@ -64,21 +59,3 @@ export function Product_courosel({ imagesList }: Product_couroselProps) {
     </Carousel>
   );
 }
-
-// <div
-//   key={image.id}
-//   className="cursor-pointer"
-//   onClick={(e) => {
-//     // scrollNum(image.id);
-//     // iconImagesClicked(image.id);
-//   }}
-// >
-//   <Image
-//     alt={`${image.id}`}
-//     src={image.original}
-//     width={100}
-//     height={100}
-//     className="object-cover w-full rounded-lg -top-5"
-//     style={{ aspectRatio: "1", objectFit: "cover" }}
-//   />
-// </div>
